@@ -1,7 +1,20 @@
 import React from "react";
 import greet from "../assets/greet.png";
 import { HERO_CONTENT } from "../../constants/index.js";
-import { motion } from "framer-motion";
+import { easeInOut, motion, transform } from "framer-motion";
+
+const ContainerVariant = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, staggerChildren: 0.5 },
+  },
+};
+const ChildVariant = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 const HeroSection = () => {
   return (
@@ -14,25 +27,41 @@ const HeroSection = () => {
               alt="Hello From Here"
               className="border-stone-900 rounded-3xl"
               initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.5 }}
             />
           </div>
         </div>
 
         <div className="w-full lg:w-1/2">
-          <motion.div className="flex flex-col items-center mt-10 lg:items-start">
-            <h2 className="pb-2 text-4xl tracking-tighter text-white lg:text-8xl">
+          <motion.div
+            initial="hidden"
+            // animate="visible"
+            whileInView="visible"
+            variants={ContainerVariant}
+            className="flex flex-col items-center mt-10 lg:items-start"
+          >
+            <motion.h2
+              variants={ChildVariant}
+              className="pb-2 text-4xl tracking-tighter text-white lg:text-8xl"
+            >
               Akash Kurdekar
-            </h2>
+            </motion.h2>
 
-            <span className="text-3xl tracking-tight text-transparent bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text">
+            <motion.span
+              variants={ChildVariant}
+              className="text-3xl tracking-tight text-transparent bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text"
+            >
               Full Stack Developer
-            </span>
-            <p className="max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-transparent bg-gradient-to-r to-stone-300 from-stone-600 bg-clip-text">
+            </motion.span>
+            <motion.p
+              variants={ChildVariant}
+              className="max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-transparent bg-gradient-to-r to-stone-300 from-stone-600 bg-clip-text"
+            >
               {HERO_CONTENT}
-            </p>
-            <a
+            </motion.p>
+            <motion.a
+              variants={ChildVariant}
               href="/Akash_BE_CSE_2024.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -40,8 +69,8 @@ const HeroSection = () => {
               className="p-4 mb-10 text-sm capitalize bg-white rounded-full text-stone-100 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] transition duration-300 ease-in-out"
             >
               Download Resume
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </div>
     </div>
