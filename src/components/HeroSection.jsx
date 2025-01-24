@@ -1,6 +1,5 @@
 import React from "react";
 import profile from "../assets/profile.jpg";
-import { ABOUT_TEXT } from "../../constants/index.js";
 import { motion } from "framer-motion";
 
 const ContainerVariant = {
@@ -39,7 +38,7 @@ const HeroSection = () => {
 
             <motion.p
               variants={ChildVariant}
-              className="max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-stone-600"
+              className="max-w-lg py-6 font-mono text-xl leading-relaxed tracking-tighter text-justify text-stone-600"
             >
               I’m Akash Kurdekar, a passionate Full Stack Developer with a
               strong foundation in the MERN stack and Java. With a deep interest
@@ -60,34 +59,40 @@ const HeroSection = () => {
               Outside of coding, I enjoy photography, cricket, and traveling,
               which help me stay creative and inspired.
             </motion.p>
+
+            <div className="flex justify-center mt-8 ml-5px">
+              {" "}
+              <motion.a
+                variants={ChildVariant}
+                href="/Akash_BE_CSE_2024.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                class="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-wide text-white bg-gray-800 rounded-lg group hover:text-black transition duration ease-in-out "
+              >
+                {" "}
+                <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56 "></span>{" "}
+                <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700 hover:text-black transition duration ease-in-out"></span>{" "}
+                <span class="relative text-sm hover:text-black tracking-wide">
+                  Download Resume
+                </span>{" "}
+              </motion.a>{" "}
+            </div>
           </motion.div>
         </div>
 
-        {/* Right Content - Image */}
-        <div className="flex justify-center w-full mb-6 lg:w-1/2 lg:mb-0">
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="flex justify-center w-full mb-6 lg:w-1/2 lg:mb-0"
+        >
           <motion.img
             src={profile}
             alt="Hello From Here"
-            className="w-full shadow-lg border-stone-900 rounded-3xl lg:w-auto"
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            className="justify-center w-full m-auto shadow-lg border-stone-900 rounded-3xl lg:w-auto h-3/4"
           />
-        </div>
-      </div>
-
-      {/* Download Button - Centered Below Card */}
-      <div className="flex justify-center mt-8">
-        <motion.a
-          variants={ChildVariant}
-          href="/Akash_BE_CSE_2024.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          download
-          className="p-4 text-sm capitalize bg-white rounded-full text-stone-900 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] transition duration-300 ease-in-out"
-        >
-          Download Resume
-        </motion.a>
+        </motion.div>
       </div>
     </div>
   );
