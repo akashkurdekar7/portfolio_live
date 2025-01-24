@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 const IconVariant = (duration) => ({
   initial: { y: -10 },
   animate: {
-    y: [10, -10],
+    y: [10, -20],
     transition: {
       duration: duration,
       ease: "linear",
@@ -57,7 +57,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(2.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-green group hover:shadow-lg"
         >
           <DiNodejs className="text-6xl text-green-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -67,7 +67,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(3.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-orange group hover:shadow-lg"
         >
           <RiHtml5Fill className="text-6xl text-orange-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -87,7 +87,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(2.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-green group hover:shadow-lg"
         >
           <FaJava className="text-6xl text-red-600 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -97,7 +97,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(3.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-purple group hover:shadow-lg"
         >
           <FaCuttlefish className="text-6xl text-purple-600 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -117,7 +117,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(2.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-blue group hover:shadow-lg"
         >
           <SiMysql className="text-6xl text-blue-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -127,7 +127,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(3.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-orange group hover:shadow-lg"
         >
           <SiPostman className="text-6xl text-orange-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -137,7 +137,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(2.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-purple group hover:shadow-lg"
         >
           <FaFigma className="text-6xl text-purple-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -147,7 +147,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(3.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-blue group hover:shadow-lg"
         >
           <PiMicrosoftWordLogo className="text-6xl text-blue-700 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -157,7 +157,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(0.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-pink group hover:shadow-lg"
         >
           <FaGithub className="text-6xl text-white transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -167,7 +167,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(3.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-red group hover:shadow-lg"
         >
           <PiMicrosoftPowerpointLogo className="text-6xl text-red-600 transition-transform duration-200 ease-in-out group-hover:scale-110" />
@@ -177,7 +177,7 @@ const Technologies = () => {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={IconVariant(1.5)}
+          variants={IconVariant(0.5)}
           className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-green group hover:shadow-lg"
         >
           <PiMicrosoftExcelLogo className="text-6xl text-green-700 transition-transform duration-200 ease-in-out group-hover:scale-110" />

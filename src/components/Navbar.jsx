@@ -1,16 +1,10 @@
 import React from "react";
-import logo from "../assets/raviKumarLogo.webp";
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between py-6">
+    <nav className="flex items-center justify-between py-2">
       <div className="flex items-center flex-shrink-0">
         <a href="/" aria-label="Home">
           {/* <img src={logo} className="mx-2" width={50} height={33} alt="logo" /> */}
@@ -31,7 +25,7 @@ const Navbar = () => {
           <FaLinkedin className="transition duration-300 hover:scale-125" />
         </a>
         <a
-          href="https://www.linkedin.com/in/akashkurdekar/"
+          href="https://github.com/akashkurdekar7"
           target="_blank"
           aria-label="Github"
           rel="noopener noreferrer"
@@ -40,7 +34,7 @@ const Navbar = () => {
           <FaGithub className="transition duration-300 hover:scale-125" />
         </a>
         <a
-          href="https://www.linkedin.com/in/akashkurdekar/"
+          href="https://www.instagram.com/unlikeakash_/"
           target="_blank"
           aria-label="Instagram"
           rel="noopener noreferrer"
@@ -49,13 +43,13 @@ const Navbar = () => {
           <FaInstagram className="transition duration-300 hover:scale-125" />
         </a>
         <a
-          href="https://www.linkedin.com/in/akashkurdekar/"
+          href="https://leetcode.com/u/akash_kurdekar/"
           target="_blank"
           aria-label="Twitter"
           rel="noopener noreferrer"
           className="p-2 transition duration-300 hover:text-white"
         >
-          <FaTwitter className="transition duration-300 hover:scale-125" />
+          <SiLeetcode className="transition duration-300 hover:scale-125" />
         </a>
       </div>
     </nav>

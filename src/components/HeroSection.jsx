@@ -1,5 +1,5 @@
 import React from "react";
-import greet from "../assets/greet.png";
+import greet from "../assets/Profile.webp";
 import { HERO_CONTENT } from "../../constants/index.js";
 import { easeInOut, motion, transform } from "framer-motion";
 
@@ -18,7 +18,7 @@ const ChildVariant = {
 
 const HeroSection = () => {
   return (
-    <div className="pb-4 lg:mb-36">
+    <div className="pb-4 lg:mb-20">
       <div className="flex flex-wrap lg:flex-row-reverse">
         <div className="w-full lg:w-1/2">
           <div className="flex justify-center lg:p-8">
@@ -28,7 +28,7 @@ const HeroSection = () => {
               className="border-stone-900 rounded-3xl"
               initial={{ x: 100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.5 }}
+              transition={{ duration: 0.5, delay: 1 }}
             />
           </div>
         </div>

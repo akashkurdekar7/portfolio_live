@@ -3,77 +3,99 @@ import project2 from "../src/assets/projects/project-2.webp";
 import project3 from "../src/assets/projects/project-3.webp";
 import project4 from "../src/assets/projects/project-4.webp";
 
-export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With 5 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as back-end technologies like Node.js, MySQL, PostgreSQL, and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
+import ammaspatery from "../src/assets/projects/ammaspatery.png";
+import knightbite from "../src/assets/projects/knightbite.png";
+import royalbrothers from "../src/assets/projects/royalbrothers.png";
+import contest from "../src/assets/projects/contest.webp";
+import vehiclewash from "../src/assets/projects/vehiclewash.jpg";
+import roadsafety from "../src/assets/projects/roadsafety.jpg";
 
-export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
+export const HERO_CONTENT = `I'm a skilled software developer with experience in frontend and JavaScript, and expertise in frameworks like React, Node.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!`;
+
+export const ABOUT_TEXT = `I am a Full Stack Developer with hands-on experience in building scalable and efficient web applications. With a strong foundation in the MERN stack and Java, I strive to deliver exceptional user experiences and impactful solutions.`;
 
 export const EXPERIENCES = [
   {
-    year: "2023 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Google Inc.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
+    year: "May 2023 – Aug 2023",
+    role: "Full Stack Web Developer Intern",
+    company: "Varcons Technologies Pvt. Ltd, Bengaluru",
+    description: `Designed and developed responsive web pages for a Wildlife Conservation site using React.js, HTML, CSS, and JavaScript. Translated client specifications into intuitive and visually appealing user interfaces while optimizing frontend performance and ensuring cross-browser compatibility.`,
+    technologies: ["React.js", "HTML", "CSS", "JavaScript"],
   },
   {
-    year: "2022 - 2023",
-    role: "Frontend Developer",
-    company: "Adobe",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
-  },
-  {
-    year: "2021 - 2022",
-    role: "Full Stack Developer",
-    company: "Facebook",
-    description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-    technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-  },
-  {
-    year: "2020 - 2021",
-    role: "Software Engineer",
-    company: "Paypal",
-    description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-    technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
+    year: "Aug 2023 - Oct 2023",
+    role: "Full Stack Web Development Intern",
+    company: "Deshpande Start-ups, Hubballi",
+    description: `Developed a full-stack e-commerce platform aimed at empowering local artisans by integrating frontend and backend systems. Designed the database schema and ensured seamless user experience across the application, implemented using the MERN stack (MongoDB, Express.js, React.js, Node.js).`,
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "Figma",
+      "Postman",
+    ],
   },
 ];
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
-    image: project1,
-    description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
-    link: "https://example.com",
-    github: "https://github.com/user/repo",
+    title: "Integrated Smart Road Safety System",
+    image: roadsafety,
+    description: `Developed an innovative solution integrating real-time weather monitoring and automatic hump detection to improve road safety and prevent accidents. Recognized at the 47th KSCST State Level Project Exhibition for its potential to enhance driver safety.`,
+    technologies: [
+      "Python",
+      "IoT",
+      "Sensor Technology",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+    github: "#",
   },
   {
-    title: "Task Management App",
-    image: project2,
-    description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
-    link: "https://example.com",
-    github: "https://github.com/user/repo",
+    title: "Contest-Based Game Application",
+    image: contest,
+    description: `Built a full-stack contest-style game using MongoDB, Express.js, React.js, and Node.js. Features included user registration, real-time score tracking, and JWT authentication for secure data handling.`,
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "JWT",
+      "Postman",
+      "API",
+      "JavaScript",
+    ],
+    github: "https://github.com/akashkurdekar7/contest_game",
   },
   {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-    link: "https://example.com",
-    github: "https://github.com/user/repo",
+    title: "Knight-Bite Food Delivery Replica",
+    image: knightbite,
+    description: `Cloned a responsive food delivery website with features like menu navigation and order placement.`,
+    technologies: ["HTML", "CSS", "JavaScript", "React.js"],
+    github: "https://github.com/akashkurdekar7/knight-bite",
   },
   {
-    title: "Blogging Platform",
-    image: project4,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
-    link: "https://example.com",
-    github: "https://github.com/user/repo",
+    title: "Royal Brothers Bike Rental Replica",
+    image: royalbrothers,
+    description: `Built a clone of the bike rental service website, implementing responsive layouts and dropdown menus.`,
+    technologies: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/akashkurdekar7/royal-brothers",
+  },
+  {
+    title: "Amma’s Pastry Website Replica",
+    image: ammaspatery,
+    description: `Created a clone of a bakery website with an intuitive user interface and responsive design.`,
+    technologies: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/akashkurdekar7/ammas-patery",
+  },
+  {
+    title: "Vehicle Service Management System",
+    image: vehiclewash,
+    description: `Developed a software solution to streamline vehicle service operations with features like appointment scheduling, inventory tracking, and reporting.`,
+    technologies: ["HTML", "CSS", "JavaScript", "MySQL", "PHP"],
+    github: "https://github.com/akashkurdekar7/vehicle_service",
   },
 ];
 
