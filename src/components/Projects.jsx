@@ -1,30 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { PROJECTS } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 
-const techFilters = [
-  "All",
-  "React",
-  "Node.js",
-  "MongoDB",
-  "Express",
-  "JavaScript",
-];
-
 const Projects = () => {
-  const [filteredProjects, setFilteredProjects] = useState(PROJECTS);
-  const [selectedFilter, setSelectedFilter] = useState("All");
-
-  const filterProjects = (tech) => {
-    setSelectedFilter(tech);
-    setFilteredProjects(
-      tech === "All"
-        ? PROJECTS
-        : PROJECTS.filter((project) => project.technologies.includes(tech))
-    );
-  };
-
   return (
     <section className="pb-12">
       {/* Heading */}
@@ -37,27 +16,10 @@ const Projects = () => {
         My Projects
       </motion.h2>
 
-      {/* Filter Buttons */}
-      <div className="flex justify-center mb-10 space-x-4">
-        {techFilters.map((tech) => (
-          <button
-            key={tech}
-            className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
-              selectedFilter === tech
-                ? "bg-blue-600 text-white shadow-md scale-105"
-                : "bg-gray-800 text-stone-300 hover:bg-gray-700"
-            }`}
-            onClick={() => filterProjects(tech)}
-          >
-            {tech}
-          </button>
-        ))}
-      </div>
-
       {/* Projects Display */}
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
-          {filteredProjects.map((project) => (
+          {PROJECTS.map((project) => (
             <motion.div
               key={project.title}
               className="relative p-6 overflow-hidden rounded-lg shadow-lg group hover:shadow-2xl"

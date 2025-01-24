@@ -32,11 +32,11 @@ const Experience = () => {
               transition={{ duration: 1 }}
               className="w-full max-w-xl mb-6 lg:w-3/4"
             >
-              <h3 className="mb-2 font-semibold">
+              <h3 className="mb-2 font-semibold text-stone-50">
                 {experience.role}
                 <span className="text-sm text-stone-500">
                   {" "}
-                  <span className="text-stone-100">-</span> {experience.company}
+                  <span className="text-stone-500">-</span> {experience.company}
                 </span>
               </h3>
 

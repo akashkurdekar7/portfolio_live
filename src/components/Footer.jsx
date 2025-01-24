@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="pb-20 text-white border-t border-stone-900">
+    <div className="pb-8 text-white border-t border-stone-900">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}

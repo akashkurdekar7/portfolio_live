@@ -12,12 +12,16 @@ import roadsafety from "../src/assets/projects/roadsafety.jpg";
 
 export const HERO_CONTENT = `I'm a skilled software developer with experience in frontend and JavaScript, and expertise in frameworks like React, Node.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!`;
 
-export const ABOUT_TEXT = `I am a Full Stack Developer with hands-on experience in building scalable and efficient web applications. With a strong foundation in the MERN stack and Java, I strive to deliver exceptional user experiences and impactful solutions.`;
+export const ABOUT_TEXT = `I’m Akash Kurdekar, a passionate Full Stack Developer with a strong foundation in the MERN stack and Java. With a deep interest in building scalable web solutions, I focus on creating seamless and intuitive user experiences. My journey in web development started with a keen interest in technology and design, and over time, I’ve developed expertise in both frontend and backend development.
+
+Alongside my technical skills, I am constantly exploring new ways to enhance my abilities and stay updated with industry trends. I’m driven by the challenge of creating products that not only meet user needs but also push the boundaries of what’s possible in web development.
+
+Outside of coding, I enjoy photography, cricket, and traveling, which help me stay creative and inspired.`;
 
 export const EXPERIENCES = [
   {
     year: "May 2023 – Aug 2023",
-    role: "Full Stack Web Developer Intern",
+    role: "Frontend Web Developer Intern",
     company: "Varcons Technologies Pvt. Ltd, Bengaluru",
     description: `Designed and developed responsive web pages for a Wildlife Conservation site using React.js, HTML, CSS, and JavaScript. Translated client specifications into intuitive and visually appealing user interfaces while optimizing frontend performance and ensuring cross-browser compatibility.`,
     technologies: ["React.js", "HTML", "CSS", "JavaScript"],
