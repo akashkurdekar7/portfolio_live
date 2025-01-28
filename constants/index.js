@@ -1,14 +1,11 @@
-import project1 from "../src/assets/projects/project-1.webp";
-import project2 from "../src/assets/projects/project-2.webp";
-import project3 from "../src/assets/projects/project-3.webp";
-import project4 from "../src/assets/projects/project-4.webp";
-
 import ammaspatery from "../src/assets/projects/ammaspatery.png";
 import knightbite from "../src/assets/projects/knightbite.png";
 import royalbrothers from "../src/assets/projects/royalbrothers.png";
 import contest from "../src/assets/projects/contest.webp";
 import vehiclewash from "../src/assets/projects/vehiclewash.jpg";
 import roadsafety from "../src/assets/projects/roadsafety.jpg";
+import kraftopia from "../src/assets/projects/kraftopia.png";
+import wildlife from "../src/assets/projects/widlife.png";
 
 export const HERO_CONTENT = `I'm a skilled software developer with experience in frontend and JavaScript, and expertise in frameworks like React, Node.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!`;
 
@@ -43,6 +40,34 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "E-Commerce Platform for Local Artisans",
+    image: kraftopia,
+    description: `Created an e-commerce website during an internship at Deshpande Startups to empower local artisans. Designed RESTful APIs using the MERN stack (MongoDB, Express.js, React.js, Node.js), implemented secure authentication with JWT, and tested APIs using Postman.`,
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "JWT",
+      "Postman",
+    ],
+    github: "https://github.com/akashkurdekar7/kraftopia-ecommerce-website",
+  },
+  {
+    title: "Wildlife template",
+    image: wildlife,
+    description: `Created an e-commerce website during an internship at Deshpande Startups to empower local artisans. Designed RESTful APIs using the MERN stack (MongoDB, Express.js, React.js, Node.js), implemented secure authentication with JWT, and tested APIs using Postman.`,
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "JWT",
+      "Postman",
+    ],
+    github: "https://github.com/akashkurdekar7/wildlife-template",
+  },
   {
     title: "Integrated Smart Road Safety System",
     image: roadsafety,
