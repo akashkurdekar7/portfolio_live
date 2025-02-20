@@ -1,60 +1,117 @@
 import React from "react";
+import styled from "styled-components";
 import { EXPERIENCES } from "./../../constants/index";
 import { motion } from "framer-motion";
 
+const Container = styled.div`
+  padding-bottom: 1rem;
+`;
+
+const Title = styled(motion.h2)`
+  margin: 5rem 0;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+`;
+
+const ExperienceWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  justify-content: center;
+`;
+
+const Year = styled(motion.div)`
+  width: 100%;
+  max-width: 25%;
+  @media (max-width: 1024px) {
+    max-width: 100%;
+  }
+`;
+
+const YearText = styled.p`
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #a8a8a8;
+`;
+
+const ExperienceContent = styled(motion.div)`
+  width: 100%;
+  max-width: 75%;
+  margin-bottom: 1.5rem;
+  @media (max-width: 1024px) {
+    max-width: 100%;
+  }
+`;
+
+const Role = styled.h3`
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #f8f8f8;
+`;
+
+const Company = styled.span`
+  font-size: 0.875rem;
+  color: #a8a8a8;
+`;
+
+const Description = styled.p`
+  margin-bottom: 1rem;
+  color: #a8a8a8;
+`;
+
+const TechTag = styled.span`
+  display: inline-block;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 5px;
+  background: #222;
+  color: #f8f8f8;
+`;
+
 const Experience = () => {
   return (
-    <div className="pb-4">
-      <motion.h2
+    <Container id="experience">
+      <Title
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-20 text-4xl text-center text-white font-black-side"
       >
         Experience
-      </motion.h2>
+      </Title>
 
       <div>
         {EXPERIENCES.map((experience, index) => (
-          <div key={index} className="flex flex-wrap mb-0 lg:justify-center">
-            <motion.div
+          <ExperienceWrapper key={index}>
+            <Year
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 1 }}
-              className="w-full lg:w-1/4"
             >
-              <p className="mb-4 text-sm text-stone-400">{experience.year}</p>
-            </motion.div>
+              <YearText>{experience.year}</YearText>
+            </Year>
 
-            <motion.div
+            <ExperienceContent
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 100 }}
               transition={{ duration: 1 }}
-              className="w-full max-w-xl mb-6 lg:w-3/4"
             >
-              <h3 className="mb-2 font-semibold text-stone-50">
-                {experience.role}
-                <span className="text-sm text-stone-500">
-                  {" "}
-                  <span className="text-stone-500">-</span> {experience.company}
-                </span>
-              </h3>
-
-              <p className="mb-4 text-stone-400">{experience.description}</p>
-
+              <Role>
+                {experience.role} <Company>- {experience.company}</Company>
+              </Role>
+              <Description>{experience.description}</Description>
               {experience.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 mt-4 mr-2 text-sm font-medium rounded text-stone-50 bg-stone-900"
-                >
-                  {tech}
-                </span>
+                <TechTag key={index}>{tech}</TechTag>
               ))}
-            </motion.div>
-          </div>
+            </ExperienceContent>
+          </ExperienceWrapper>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

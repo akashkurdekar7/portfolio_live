@@ -1,11 +1,11 @@
 import React from "react";
 import { PROJECTS } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <section className="pb-12">
+    <section className="pb-12" id="projects">
       {/* Heading */}
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,13 +26,14 @@ const Projects = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              whileHover={{ scale: 1.05 }}
             >
               {/* Project Image */}
               <motion.div
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
                 className="relative flex justify-center overflow-hidden rounded-lg"
               >
                 <motion.img
@@ -46,7 +47,7 @@ const Projects = () => {
               <motion.div
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 100 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
                 className="mt-6"
               >
                 <h3 className="text-2xl font-semibold text-white">
@@ -65,16 +66,33 @@ const Projects = () => {
                 </div>
               </motion.div>
               {/* Hover Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center px-6 py-3 text-lg font-semibold text-white transition duration-300 ease-in-out bg-gray-700 rounded-lg hover:bg-gray-800"
-                >
-                  GitHub Repo <FaGithub className="ml-2" />
-                </a>
-              </div>
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100"
+                whileHover={{ opacity: 1 }}
+              >
+                <div className="flex gap-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center px-6 py-3 text-lg font-semibold text-white transition duration-300 ease-in-out bg-gray-700 rounded-lg hover:bg-gray-800"
+                    aria-label={`View ${project.title} on GitHub`}
+                  >
+                    GitHub <FaGithub className="ml-2" />
+                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-6 py-3 text-lg font-semibold text-white transition duration-300 ease-in-out bg-blue-700 rounded-lg hover:bg-blue-800"
+                      aria-label={`View live demo of ${project.title}`}
+                    >
+                      Live Demo <FaExternalLinkAlt className="ml-2" />
+                    </a>
+                  )}
+                </div>
+              </motion.div>
             </motion.div>
           ))}
         </AnimatePresence>

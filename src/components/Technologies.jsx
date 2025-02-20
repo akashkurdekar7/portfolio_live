@@ -1,7 +1,14 @@
 import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 import { DiNodejs } from "react-icons/di";
-import { FaCuttlefish, FaFigma, FaGitAlt, FaJava } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
+import {
+  FaCuttlefish,
+  FaFigma,
+  FaGitAlt,
+  FaJava,
+  FaGithub,
+} from "react-icons/fa";
 import {
   PiMicrosoftExcelLogo,
   PiMicrosoftPowerpointLogo,
@@ -9,182 +16,101 @@ import {
 } from "react-icons/pi";
 import { RiCss3Fill, RiHtml5Fill, RiReactjsLine } from "react-icons/ri";
 import { SiMongodb, SiMysql, SiPostman } from "react-icons/si";
-import { motion } from "framer-motion";
 
-const IconVariant = (duration) => ({
-  initial: { y: -10 },
-  animate: {
-    y: [10, -20],
-    transition: {
-      duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse",
-    },
-  },
-});
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  background: transparent;
+`;
+
+const Title = styled(motion.h1)`
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+`;
+
+const Grid = styled(motion.div)`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  width: 100%;
+`;
+
+const TechCard = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+  }
+`;
+
+const TechIcon = styled.div`
+  font-size: 3rem;
+  color: ${(props) => props.color || "white"};
+`;
+
+const TechName = styled.p`
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+`;
+
+const technologies = [
+  { name: "React.js", icon: <RiReactjsLine />, color: "#61DBFB" },
+  { name: "Node.js", icon: <DiNodejs />, color: "#3C873A" },
+  { name: "HTML5", icon: <RiHtml5Fill />, color: "#E44D26" },
+  { name: "CSS3", icon: <RiCss3Fill />, color: "#1572B6" },
+  { name: "Java", icon: <FaJava />, color: "#ED8B00" },
+  { name: "C++", icon: <FaCuttlefish />, color: "#00599C" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "#4DB33D" },
+  { name: "MySQL", icon: <SiMysql />, color: "#00758F" },
+  { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
+  { name: "Figma", icon: <FaFigma />, color: "#F24E1E" },
+  { name: "Word", icon: <PiMicrosoftWordLogo />, color: "#2B579A" },
+  { name: "Git/GitHub", icon: <FaGithub />, color: "white" },
+  { name: "PowerPoint", icon: <PiMicrosoftPowerpointLogo />, color: "#D24726" },
+  { name: "Excel", icon: <PiMicrosoftExcelLogo />, color: "#217346" },
+];
 
 const Technologies = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 bg-transparent">
-      <motion.h1
+    <Container id="techstack">
+      <Title
         initial={{ opacity: 0, y: -100 }}
-        transition={{
-          duration: 1.5,
-        }}
+        transition={{ duration: 1.5 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="mb-10 text-4xl font-bold tracking-wide text-white font-black-side"
       >
         My Tech Stack
-      </motion.h1>
-
-      <motion.div
+      </Title>
+      <Grid
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 1.5 }}
-        className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5"
       >
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(1.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-blue group hover:shadow-lg"
-        >
-          <RiReactjsLine className="text-6xl text-blue-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">React.js</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(2.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-green group hover:shadow-lg"
-        >
-          <DiNodejs className="text-6xl text-green-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">Node.js</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(3.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-orange group hover:shadow-lg"
-        >
-          <RiHtml5Fill className="text-6xl text-orange-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">HTML5</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(1.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-blue group hover:shadow-lg"
-        >
-          <RiCss3Fill className="text-6xl text-blue-600 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">CSS3</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(2.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-green group hover:shadow-lg"
-        >
-          <FaJava className="text-6xl text-red-600 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">Java</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(3.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-purple group hover:shadow-lg"
-        >
-          <FaCuttlefish className="text-6xl text-purple-600 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">C++</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(1.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-green group hover:shadow-lg"
-        >
-          <SiMongodb className="text-6xl text-green-600 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">MongoDB</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(2.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-blue group hover:shadow-lg"
-        >
-          <SiMysql className="text-6xl text-blue-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">MySQL</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(3.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-orange group hover:shadow-lg"
-        >
-          <SiPostman className="text-6xl text-orange-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">Postman</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(2.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-purple group hover:shadow-lg"
-        >
-          <FaFigma className="text-6xl text-purple-500 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">Figma</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(3.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-blue group hover:shadow-lg"
-        >
-          <PiMicrosoftWordLogo className="text-6xl text-blue-700 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">Word</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(0.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-pink group hover:shadow-lg"
-        >
-          <FaGithub className="text-6xl text-white transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">Git/GitHub</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(3.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-red group hover:shadow-lg"
-        >
-          <PiMicrosoftPowerpointLogo className="text-6xl text-red-600 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">PowerPoint</p>
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={IconVariant(0.5)}
-          className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out border-2 border-transparent rounded-lg shadow-green group hover:shadow-lg"
-        >
-          <PiMicrosoftExcelLogo className="text-6xl text-green-700 transition-transform duration-200 ease-in-out group-hover:scale-110" />
-          <p className="mt-4 font-medium text-gray-800">Excel</p>
-        </motion.div>
-      </motion.div>
-    </div>
+        {technologies.map((tech, index) => (
+          <TechCard key={index}>
+            <TechIcon color={tech.color}>{tech.icon}</TechIcon>
+            <TechName>{tech.name}</TechName>
+          </TechCard>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 
