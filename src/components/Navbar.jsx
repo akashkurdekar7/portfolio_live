@@ -16,42 +16,46 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Tech Stack", link: "/techstack" },
-    { name: "Projects", link: "/projects" },
-    { name: "Experience", link: "/experience" },
-    { name: "Contact", link: "/contact" },
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Tech Stack", id: "techstack" },
+    { name: "Projects", id: "projects" },
+    { name: "Experience", id: "experience" },
+    { name: "Contact", id: "contact" },
   ];
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
+  };
 
   return (
     <Wrapper scrolling={scrolling}>
       <div className="logo">
-        <a href="/" className="logo-link" aria-label="Home">
+        <a href="#home" className="logo-link" aria-label="Home">
           Akash Kurdekar
         </a>
       </div>
 
-      {/* Navbar List */}
       <NavList $menuOpen={menuOpen} scrolling={scrolling}>
-        {/* Close button only in mobile view */}
         <div className="menu-header">
           <FaTimes className="close-icon" onClick={() => setMenuOpen(false)} />
         </div>
         {navLinks.map((item) => (
           <li key={item.name} className="nav-items">
-            <a
+            <button
               className="nav-items-link"
-              href={item.link}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => scrollToSection(item.id)}
             >
               {item.name}
-            </a>
+            </button>
           </li>
         ))}
       </NavList>
 
-      {/* Mobile Menu Button */}
       <div className="btn">
         <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
           {!menuOpen && <FaBars />}
@@ -71,18 +75,20 @@ const Wrapper = styled.nav`
   top: 0;
   left: 0;
   background-color: ${({ scrolling }) =>
-    scrolling ? "rgba(255, 255, 255, 0.7)" : "transparent"};
+    scrolling ? "rgba(255, 255, 255, 0.2)" : "transparent"};
   backdrop-filter: ${({ scrolling }) =>
-    scrolling ? "blur(1px)" : "blur(0px)"};
-  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease;
+    scrolling ? "blur(10px)" : "blur(0px)"};
+  transition: all 0.3s ease-in-out;
   z-index: 1000;
 
   .logo {
-    font-family: "Brittany Signature", sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    font-weight: bold;
     color: ${({ scrolling }) => (scrolling ? "black" : "white")};
-    margin: 0;
-    letter-spacing: 1px;
+  }
+
+  .logo-link {
+    font-family: "Brittany Signature", cursive;
   }
 
   .menu-icon {
@@ -92,46 +98,43 @@ const Wrapper = styled.nav`
     display: none;
   }
 
-  @media (max-width: 786px) {
+  @media (max-width: 768px) {
     .menu-icon {
       display: block;
     }
-  }
-
-  .btn {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
   }
 `;
 
 const NavList = styled.ul`
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 
   .menu-header {
     display: none;
   }
 
-  .nav-items a {
-    font-size: 1.5rem;
+  .nav-items button {
+    font-size: 1.2rem;
     color: ${({ scrolling }) => (scrolling ? "black" : "white")};
     font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
     position: relative;
     transition: color 0.3s ease-in-out;
 
     &:hover {
-      color: red;
+      color: #e84545;
     }
 
     &::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -2px;
+      bottom: -5px;
       width: 0;
       height: 2px;
-      background-color: red;
+      background-color: #e84545;
       transition: width 0.3s ease-in-out;
     }
 
@@ -140,13 +143,13 @@ const NavList = styled.ul`
     }
   }
 
-  @media (max-width: 786px) {
+  @media (max-width: 768px) {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     display: ${({ $menuOpen }) => ($menuOpen ? "flex" : "none")};
     flex-direction: column;
     align-items: center;
@@ -155,8 +158,8 @@ const NavList = styled.ul`
     z-index: 999;
     transition: opacity 0.3s ease-in-out;
 
-    .nav-items a {
-      font-size: 1.8rem;
+    .nav-items button {
+      font-size: 1.5rem;
       color: white;
     }
 

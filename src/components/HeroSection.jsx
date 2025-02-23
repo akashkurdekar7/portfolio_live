@@ -1,48 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import profile from "../assets/profile.jpg";
 import { motion } from "framer-motion";
-
-const ContainerVariant = {
-  hidden: { opacity: 0, x: -100 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.5, staggerChildren: 0.5 },
-  },
-};
-
-const ChildVariant = {
-  hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-};
+import profile from "../assets/profile.jpg";
 
 const HeroSection = () => {
   return (
     <Section id="home">
       <Card>
         {/* Left Content - About Text */}
-        <LeftContent
-          initial="hidden"
-          whileInView="visible"
-          variants={ContainerVariant}
-        >
-          <Heading variants={ChildVariant}>About</Heading>
+        <LeftContent initial="hidden" whileInView="visible">
+          <Heading>About</Heading>
 
-          <Description variants={ChildVariant}>
+          <Description>
             I’m Akash Kurdekar, a passionate Full Stack Developer with a strong
             foundation in the MERN stack and Java. With a deep interest in
             building scalable web solutions, I focus on creating seamless and
-            intuitive user experiences. My journey in web development started
-            with a keen interest in technology and design, and over time, I’ve
-            developed expertise in both frontend and backend development.
-            <br />
-            <br />
-            Alongside my technical skills, I am constantly exploring new ways to
-            enhance my abilities and stay updated with industry trends. I’m
-            driven by the challenge of creating products that not only meet user
-            needs but also push the boundaries of what’s possible in web
-            development.
+            intuitive user experiences.
             <br />
             <br />
             Outside of coding, I enjoy photography, cricket, and traveling,
@@ -50,11 +23,11 @@ const HeroSection = () => {
           </Description>
 
           <ResumeButton
-            variants={ChildVariant}
             href="/Akash_BE_CSE_2024.pdf"
             target="_blank"
             rel="noopener noreferrer"
             download
+            whileHover={{ scale: 1.05 }}
           >
             Download Resume
           </ResumeButton>
@@ -66,7 +39,7 @@ const HeroSection = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
         >
-          <ProfileImage src={profile} alt="Hello From Here" />
+          <ProfileImage src={profile} alt="Profile" />
         </ImageContainer>
       </Card>
     </Section>
@@ -90,7 +63,6 @@ const Card = styled.div`
   width: 100%;
   max-width: 100%;
   padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
 
   @media (min-width: 1024px) {
@@ -157,7 +129,7 @@ const ImageContainer = styled(motion.div)`
 
 const ProfileImage = styled(motion.img)`
   width: 100%;
-  max-width: 300px;
+  max-width: 70%;
   border-radius: 24px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 `;

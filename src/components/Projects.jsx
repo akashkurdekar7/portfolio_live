@@ -6,17 +6,15 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 const Projects = () => {
   return (
     <section className="pb-12" id="projects">
-      {/* Heading */}
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.5 }}
-        className="my-16 text-5xl text-center text-white font-black-side"
+        className="my-12 text-4xl font-bold text-center text-white"
       >
         My Projects
       </motion.h2>
 
-      {/* Projects Display */}
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
           {PROJECTS.map((project) => (
@@ -29,7 +27,6 @@ const Projects = () => {
               transition={{ duration: 0.4, ease: "easeInOut" }}
               whileHover={{ scale: 1.05 }}
             >
-              {/* Project Image */}
               <motion.div
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
@@ -39,26 +36,29 @@ const Projects = () => {
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="object-cover w-full h-64 transition-transform duration-300 rounded-lg group-hover:scale-105"
+                  className="object-cover w-full h-56 transition-transform duration-300 rounded-lg group-hover:scale-105"
                   loading="lazy"
                 />
               </motion.div>
-              {/* Project Details */}
               <motion.div
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 100 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="mt-6"
+                className="mt-4"
               >
-                <h3 className="text-2xl font-semibold text-white">
+                <h3 className="text-xl font-semibold text-white">
                   {project.title}
                 </h3>
-                <p className="mt-4 text-stone-400">{project.description}</p>
-                <div className="flex flex-wrap mt-4">
+                <p className="mt-3 text-sm text-stone-400">
+                  {project.description.length > 100
+                    ? project.description.substring(0, 100) + "..."
+                    : project.description}
+                </p>
+                <div className="flex flex-wrap mt-3">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 m-1 text-sm font-medium bg-gray-800 rounded-full text-stone-300 hover:bg-gray-700"
+                      className="px-3 py-1 m-1 text-xs font-medium bg-gray-800 rounded-full text-stone-300 hover:bg-gray-700"
                     >
                       {tech}
                     </span>
@@ -75,7 +75,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center px-6 py-3 text-lg font-semibold text-white transition duration-300 ease-in-out bg-gray-700 rounded-lg hover:bg-gray-800"
+                    className="flex items-center px-5 py-2 text-sm font-semibold text-white transition duration-300 ease-in-out bg-gray-700 rounded-lg hover:bg-gray-800"
                     aria-label={`View ${project.title} on GitHub`}
                   >
                     GitHub <FaGithub className="ml-2" />
@@ -85,7 +85,7 @@ const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-6 py-3 text-lg font-semibold text-white transition duration-300 ease-in-out bg-blue-700 rounded-lg hover:bg-blue-800"
+                      className="flex items-center px-5 py-2 text-sm font-semibold text-white transition duration-300 ease-in-out bg-blue-700 rounded-lg hover:bg-blue-800"
                       aria-label={`View live demo of ${project.title}`}
                     >
                       Live Demo <FaExternalLinkAlt className="ml-2" />

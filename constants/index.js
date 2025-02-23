@@ -6,6 +6,7 @@ import vehiclewash from "../src/assets/projects/vehiclewash.jpg";
 import roadsafety from "../src/assets/projects/roadsafety.jpg";
 import kraftopia from "../src/assets/projects/kraftopia.png";
 import wildlife from "../src/assets/projects/widlife.png";
+import parallaxWebsite from "../src/assets/projects/parallaxWebsite.png";
 
 export const HERO_CONTENT = `I'm a skilled software developer with experience in frontend and JavaScript, and expertise in frameworks like React, Node.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!`;
 
@@ -40,6 +41,20 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "Parallax Single-Page Website",
+    image: parallaxWebsite,
+    description: `Designed and developed a smooth-scrolling, responsive parallax website using React, Framer Motion, React Router DOM, and Styled Components. Features include dynamic animations, interactive UI elements, and a modern aesthetic.`,
+    technologies: [
+      "React",
+      "Framer Motion",
+      "React Router DOM",
+      "Styled Components",
+      "Vite",
+      "Vercel",
+    ],
+    github: "https://github.com/akashkurdekar7/parallax_website",
+  },
   {
     title: "E-Commerce Platform for Local Artisans",
     image: kraftopia,
